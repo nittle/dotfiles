@@ -14,8 +14,14 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id libinput-gestures-setup start
 set $mod Mod1
 
+# Start daemon that warns about low battery
+# -w - warning; -c - critical; -d - danger
+exec --no-startup-id batsignal -w 15 -c 5
+
+# Start Telegram in a small window
 for_window [class="TelegramDesktop"] resize set width 20ppt
 for_window [class="AyuGramDesktop"] resize set width 20ppt
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:monospace 8

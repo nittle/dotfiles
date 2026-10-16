@@ -33,6 +33,9 @@
 " Sets how many lines of history VIM has to remember
 set history=500
 
+" Run RustFmt on save
+let g:rustfmt_autosave = 1
+
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
@@ -56,6 +59,14 @@ command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Remove the menu bar
+set guioptions -=m
+
+" Remove the scrollbars
+set guioptions -=L
+set guioptions -=r
+set guioptions -=b
+
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 
